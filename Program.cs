@@ -1,4 +1,4 @@
-﻿using System.Data;
+﻿using System;
 
 namespace RPG
 {
@@ -32,7 +32,7 @@ namespace RPG
             Console.WriteLine("you have been chosen to save this world from the plague that has befallen it");
 
             Console.WriteLine("before you leave you need to accept this responsibilty");
-            bool doyouaccept = (false);
+            bool doyouaccept = false;
             while (doyouaccept == false && Ivelostitwithyou < 5)
             {
                 Console.WriteLine("do you accept? (Y/N) ");
@@ -50,8 +50,8 @@ namespace RPG
                     Console.WriteLine("you will encounter people all across the world and some of them might decide to join you and help you with the mission");
 
                     Console.WriteLine("when you leave you find yourself infront of 2 paths, one path going left and one path going right (L/R)");
-                    bool doyougoleft = (false);
-                    while (doyougoleft == false);
+                    bool doyougoleft = false;
+                    while (doyougoleft == false)
                     {
                         accept = Console.ReadLine();
 
@@ -65,9 +65,10 @@ namespace RPG
                             Console.WriteLine("you go to the village");
 
                             Console.WriteLine("do you enter the village (Y/N)");
-                            bool doyouenter = (false);
-                            while (doyouenter == false);
+                            bool doyouenter = false;
+                            while (doyouenter == false) 
                             {
+
                                 accept = Console.ReadLine();
 
                                 accept = accept.ToUpper();
@@ -78,8 +79,8 @@ namespace RPG
                                     Console.WriteLine("you enter the village and you notice that even though you heared people talking and working before you enter you can't see or hear anyone anymore");
 
                                     Console.WriteLine("you start calling out for people to know if anybody is here but nobody answers so you decide to go to the horse stables and when you get there you can see that the stable door is slightly open so you look in and see a girl standing by the horses, do you open the door to talk to the girl (Y/N)");
-                                    bool doyoutalk = (false);
-                                    while (doyoutalk == false) ;
+                                    bool doyoutalk = false;
+                                    while (doyoutalk == false)
                                     {
                                         accept = Console.ReadLine();
 
@@ -124,8 +125,8 @@ namespace RPG
 
 
                                         Console.WriteLine("do you knock (Y/N)");
-                                        bool doyouknock = (false);
-                                        while (doyouknock == false) ;
+                                        bool doyouknock = false;
+                                        while (doyouknock == false)
                                         {
 
                                             accept = Console.ReadLine();
@@ -139,8 +140,8 @@ namespace RPG
                                                 Console.WriteLine("you see who looks to be a wizard before you and he says to you 'i see you have a great journey ahead of you i can help with that journey so long as you help me with one small thing first");
 
                                                 Console.WriteLine("do you want to help the wizard (Y/N)");
-                                                bool doyouhelp = (false);
-                                                while (doyouhelp == false) ;
+                                                bool doyouhelp = false;
+                                                while (doyouhelp == false)
                                                 {
 
                                                     accept = Console.ReadLine();
@@ -170,34 +171,32 @@ namespace RPG
                                                     }
                                                 }
                                             }
-                                            else
-                                            {
 
-                                            }
                                         }
                                     }
 
                                 }
-
-            else
-            { 
-                if (Ivelostitwithyou <= 4)
-                {
-                    Console.WriteLine("you said no CHOOSE AGAIN");
-                    Ivelostitwithyou += 1;
-                }
-                    else
-                    {
-                        Ivelostitwithyou += 1;
-                    }
-            }
                             }
                         }
-                        Console.WriteLine("Because you did not choose what I wanted you die");
+                        else
+                        {
+                            if (Ivelostitwithyou <= 4)
+                            {
+                                Console.WriteLine("you said no CHOOSE AGAIN");
+                                Ivelostitwithyou += 1;
+                            }
+                            else
+                            {
+                                Ivelostitwithyou += 1;
+                            }
+                        }
                     }
+
                 }
-            }
-        
+                Console.WriteLine("Because you did not choose what I wanted you die");
+             }
+         }
+      
     
     
 
@@ -261,4 +260,4 @@ namespace RPG
 
         }
     }
-}
+
